@@ -40,6 +40,8 @@ const Authors = (props) => {
     setYear('')
   }
 
+  
+
   return (
     <div>
       <h2>authors</h2>
@@ -59,7 +61,7 @@ const Authors = (props) => {
           ))}
         </tbody>
       </table>
-      <h3>Set Birthyear</h3>
+      { props.canAdd ? <div><h3>Set Birthyear</h3>
       <form onSubmit={submit}>
         <Select
           defaultValue={ author }
@@ -75,7 +77,7 @@ const Authors = (props) => {
           />
         </div>
         <button type="submit">update author</button>
-      </form>
+      </form></div> : <></>}
     </div>
   )
 }
